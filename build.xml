@@ -1,0 +1,64 @@
+<project name="servlet" basedir="." default="war">
+
+    <property name="app.name" value="${ant.project.name}"/>
+    <property name="app.apiVersion" value="1.0"/>
+
+    <!-- Path Locations -->
+    <property name="dir.src"		value="src"/>
+    <property name="dir.build"		value="build"/>
+    <property name="dir.classes"	value="${dir.build}/WEB-INF/classes"/>
+    <property name="dir.jar"		value="${dir.build}/jar"/>
+    <property name="dir.lib"		value="lib"/>
+    <property name="dir.conf"		value="conf"/>
+    <property name="dir.web"		value="web"/>
+    <property name="dir.web.inf"	value="${dir.web}/WEB-INF"/>    
+    <property name="dir.ec2" 		value="operations/ec2"/>
+    <property name="dir.gen.source"	value="${dir.build}/gensrc"/>
+
+    <!-- JBoss Deployment -->
+    <property name="dir.build" 		value="build"/>
+    <property name="dir.build.web.inf" 	value="${dir.build}/WEB-INF"/>
+    <property name="dir.distribution" 	value="${dir.build}/distribution"/>
+    <property name="war.name"		value="${app.name}v${app.apiVersion}.war"/> 
+
+    <path id="classpath.path">
+ 	<pathelement location="${dir.conf}"/>
+	<pathelement location="${dir.classes}"/>
+	<fileset dir="${dir.lib}">
+	    <include name="**/*.jar"/>
+	</fileset>
+    </path>
+
+    <path id="classpath">
+	<fileset dir="${dir.lib}" includes="**/*.jar"/>
+    </path>
+
+
+    <target name="clean">
+	<delete dir="${dir.build}"/>
+    </target>
+
+    <target name="compile-init" depends="">
+	<mkdir dir="${dir.build}"/>
+	<mkdir dir="${dir.classes}"/>
+  	<mkdir dir="${dir.build.web.inf}"/>
+    </target>
+
+    <target name="compile" depends="compile-init">
+    	<javac destdir="${dir.classes}" includeantruntime="false" debug="true">
+	    	<src path="${dir.src}"/>
+	    	<classpath>
+				<path refid="classpath.path"/>
+	    	</classpath>
+		</javac>
+	<copy todir="${dir.classes}">
+	    <fileset dir="${dir.conf}" excludes="**/*.java"/>
+  	</copy>
+   	<copy file="${dir.build.web.inf}/classes/web.xml" todir="${dir.build.web.inf}"/> 
+    </target>
+
+    <target name="war" depends="compile">
+		<jar basedir="${dir.build}" destfile="${war.name}"/>
+    </target>
+
+</project>
