@@ -1,0 +1,5 @@
+How to set up your servlets environment:
+1. Make sure you have the JDK. Download this from http://www.oracle.com/technetwork/java/javase/downloads/index.html if you don't have it already.
+2. Preferably, get Eclipse: http://download.eclipse.org/jetty/stable-7/dist/
+3. Download and install the Jetty Server using these instructions: http://wiki.eclipse.org/Jetty/Howto/Install_Jetty
+4. Download the servlet API: http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/
