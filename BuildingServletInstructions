@@ -1,0 +1,5 @@
+How to actually build your servlet:
+1. Write your servlet java code in the /src folder.
+2. Run the ant build script by running "ant" while in the root folder. 
+   You should now have a servletv1.0.war. This servlet can be deployed.
+3. Yep. That easy.
