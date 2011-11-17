@@ -3,3 +3,7 @@ How to set up your servlets environment:
 2. Preferably, get Eclipse: http://download.eclipse.org/jetty/stable-7/dist/
 3. Download and install the Jetty Server using these instructions: http://wiki.eclipse.org/Jetty/Howto/Install_Jetty
 4. Download the servlet API: http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/
+5. Install ant:
+	Windows: http://winant.googlecode.com/files/winant-install-v7.exe
+	Ubuntu: sudo apt-get install ant
+	Mac: may be preinstalled.
