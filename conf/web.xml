@@ -4,14 +4,14 @@
  'http://java.sun.com/dtd/web-app_2_3.dtd'>
 <web-app>
 		<servlet>
-				<servlet-name>EchoServlet</servlet-name>
-				<servlet-class>servlet.EchoServlet</servlet-class>
+				<servlet-name>[Servlet Name]</servlet-name>
+				<servlet-class>[com.package.ServletName]</servlet-class>
 				<load-on-startup>1</load-on-startup>
 		</servlet>
 
         <servlet-mapping>
-                <servlet-name>EchoServlet</servlet-name>
-                <url-pattern>/echo</url-pattern>
+                <servlet-name>[ServletName]</servlet-name>
+                <url-pattern>/[servletPath]</url-pattern>
         </servlet-mapping>
         
 </web-app>
