@@ -5,7 +5,8 @@
 <web-app>
 	<servlet>
 		<servlet-name>EchoServlet</servlet-name>
-		<servlet-class>servlet.EchoServlet</servlet-class>				<load-on-startup>1</load-on-startup>
+		<servlet-class>servlet.EchoServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
         <servlet-mapping>
                 <servlet-name>EchoServlet</servlet-name>
